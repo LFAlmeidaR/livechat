@@ -1,0 +1,2 @@
+<!-- Adiciona a aba "Alerta Geral" no menu de configurações -->
+<?php if ($currentUser->hasAccessTo('lhchatsettings','administrate')) : ?> <li role="presentation" class="nav-item"><a class="nav-link" href="#alerta_geral" aria-controls="alerta_geral" role="tab" data-toggle="tab">Alerta Geral</a></li> <?php endif;?>

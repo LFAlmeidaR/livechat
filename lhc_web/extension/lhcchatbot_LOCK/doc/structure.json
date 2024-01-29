@@ -1,0 +1,211 @@
+{
+    "tables": {        
+        "lhc_lhcchatbot_question": [
+            {
+                "field": "id",
+                "type": "bigint(20)",
+                "null": "NO",
+                "key": "PRI",
+                "default": null,
+                "extra": "auto_increment"
+            },
+            {
+                "field": "question",
+                "type": "text",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "field": "answer",
+                "type": "text",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "field": "context_id",
+                "type": "int(11)",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "field": "was_used",
+                "type": "int(11)",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "field": "chat_id",
+                "type": "bigint(20)",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "field": "confirmed",
+                "type": "int(11)",
+                "null": "NO",
+                "key": "",
+                "default": "1",
+                "extra": ""
+            },
+            {
+                "field": "user_id",
+                "type": "int(11)",
+                "null": "NO",
+                "key": "",
+                "default": "0",
+                "extra": ""
+            }
+        ],
+        "lhc_lhcchatbot_use": [
+            {
+                "field": "id",
+                "type": "bigint(20)",
+                "null": "NO",
+                "key": "PRI",
+                "default": null,
+                "extra": "auto_increment"
+            }
+        ],
+        "lhc_lhcchatbot_context": [
+            {
+                "field": "id",
+                "type": "int(11)",
+                "null": "NO",
+                "key": "PRI",
+                "default": null,
+                "extra": "auto_increment"
+            },
+            {
+                "field": "name",
+                "type": "varchar(50)",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            }
+        ],
+        "lhc_lhcchatbot_invalid": [
+            {
+                "field": "id",
+                "type": "int(11)",
+                "null": "NO",
+                "key": "PRI",
+                "default": null,
+                "extra": "auto_increment"
+            },
+            {
+                "field": "question",
+                "type": "text",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "field": "answer",
+                "type": "text",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "field": "counter",
+                "type": "int(11)",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "field": "chat_id",
+                "type": "bigint(20)",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "field": "context_id",
+                "type": "bigint(20)",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            }
+        ],
+        "lhc_lhcchatbot_context_link_department": [
+            {
+                "field": "id",
+                "type": "int(11)",
+                "null": "NO",
+                "key": "PRI",
+                "default": null,
+                "extra": "auto_increment"
+            },
+            {
+                "field": "context_id",
+                "type": "int(11)",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "field": "department_id",
+                "type": "int(11)",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            }
+        ],
+        "lhc_lhcchatbot_index": [
+            {
+                "field": "chat_id",
+                "type": "bigint(20)",
+                "null": "NO",
+                "key": "UNI",
+                "default": null,
+                "extra": ""
+            }
+        ],
+        "lhc_lhcchatbot_used": [
+            {
+                "field": "chat_id",
+                "type": "bigint(20)",
+                "null": "NO",
+                "key": "UNI",
+                "default": null,
+                "extra": ""
+            }
+        ]
+    },  
+    "tables_data": {    },
+    "tables_data_identifier": {    },
+    "tables_indexes" : {
+    	"lhc_lhcchatbot_question" : {
+    		"new" : {"context_id" : "ALTER TABLE `lhc_lhcchatbot_question` ADD INDEX `context_id` (`context_id`);", "was_used" : "ALTER TABLE `lhc_lhcchatbot_question` ADD INDEX `was_used` (`was_used`);", "confirmed" : "ALTER TABLE `lhc_lhcchatbot_question` ADD INDEX `confirmed` (`confirmed`);"},
+    		"old" : []
+    	}
+    },
+    "tables_create": {
+    	"lhc_lhcchatbot_question" : "CREATE TABLE `lhc_lhcchatbot_question` (  `id` bigint(20) NOT NULL AUTO_INCREMENT,  `question` text NOT NULL, `answer` text NOT NULL, `context_id` int(11) NOT NULL, `user_id` int(11) NOT NULL, `chat_id` bigint(20) NOT NULL, `was_used` int(11) NOT NULL, `confirmed` int(11) NOT NULL,  PRIMARY KEY (`id`),  KEY `context_id` (`context_id`),  KEY `was_used` (`was_used`),  KEY `confirmed` (`confirmed`)) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+    	"lhc_lhcchatbot_context" : "CREATE TABLE `lhc_lhcchatbot_context` ( `id` int(11) NOT NULL AUTO_INCREMENT, `name` varchar(50) NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+    	"lhc_lhcchatbot_context_link_department" : "CREATE TABLE `lhc_lhcchatbot_context_link_department` (  `id` int(11) NOT NULL AUTO_INCREMENT,  `context_id` int(11) NOT NULL,  `department_id` int(11) NOT NULL,  PRIMARY KEY (`id`),  KEY `department_id` (`department_id`),  KEY `context_id` (`context_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+        "lhc_lhcchatbot_index" : "CREATE TABLE `lhc_lhcchatbot_index` (  `chat_id` bigint(20) unsigned NOT NULL, UNIQUE KEY `chat_id` (`chat_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8",
+        "lhc_lhcchatbot_used" : "CREATE TABLE `lhc_lhcchatbot_used` (  `chat_id` bigint(20) unsigned NOT NULL, UNIQUE KEY `chat_id` (`chat_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8",
+        "lhc_lhcchatbot_use" : "CREATE TABLE `lhc_lhcchatbot_use` (  `id` bigint(20) NOT NULL AUTO_INCREMENT,  `question` text NOT NULL, `answer` text NOT NULL, `context_id` int(11) NOT NULL, `question_id` int(11) NOT NULL, `ctime` int(11) NOT NULL, `user_id` int(11) NOT NULL, `chat_id` bigint(20) NOT NULL, `dep_id` int(11) NOT NULL,  PRIMARY KEY (`id`),  KEY `context_id` (`context_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
+        "lhc_lhcchatbot_invalid" : "CREATE TABLE `lhc_lhcchatbot_invalid` ( `id` int(11) NOT NULL AUTO_INCREMENT, `question` text NOT NULL,  `answer` text NOT NULL, `counter` int(11) NOT NULL, `chat_id` bigint(20) NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8;"
+    }
+}

@@ -1,0 +1,42 @@
+/**
+* Write your style overrides here for LTR languages
+**/
+
+
+/*Torna a cor do chat do usuario padrao igual o nosso, laranja e azul*/
+
+#messagesBlock div.message-admin div.msg-body{
+	background-color: #ffffff;
+	color:#212529;
+}
+
+#messagesBlock div.response .vis-tit{
+	color: #496b29;
+}
+
+#messagesBlock div.message-admin .op-tit{
+	color: #474647; /*  #FE7201*/
+}
+
+#messagesBlock div.response div.msg-body{
+	background-color: #dcf8c6;
+	color: #000000;
+}
+
+#messagesBlock{
+	background-color: #e5ddd5;
+}
+
+button.btn-bot{
+	background-color: #dcf8c6;
+	border-color: #dcf8c6;
+	color: #000000;
+	font-weight: bold;
+}
+
+button.btn-bot:hover{
+	background-color: #fffffff;
+	border-color: #fffffff;
+	color: #000000;
+	font-weight: bold;
+}
