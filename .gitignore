@@ -1,0 +1,6 @@
+# Composer
+/lhc_web/lib/vendor/
+/composer.phar
+
+# PhpStorm
+/.idea/
